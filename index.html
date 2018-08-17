@@ -81,6 +81,8 @@
     }
     else if ((y + ballRadius) >= canvas.height) {
       if (x > paddleX && x < paddleX + paddleWidth) {
+        var success = new Audio('paddle.mp3');
+        success.play();
         dy = -dy;
       }
       else {
@@ -97,8 +99,8 @@
               if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
                   dy = -dy;
                   b.status -= 1;
-                  var success = new Audio('collision.mp3');
-                  success.play();
+                  var successbricks = new Audio('collision.mp3');
+                  successbricks.play();
                   if (b.status == 0)
                     score++;
                   if (score == brickRowCount * brickColumnCount) {
