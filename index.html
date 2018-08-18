@@ -115,7 +115,7 @@
   function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0000DD";
+    ctx.fillStyle = "#000000";
     ctx.fill();
     ctx.closePath();
     if(rightPressed && paddleX < canvas.width-paddleWidth) {
