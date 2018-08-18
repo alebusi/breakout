@@ -81,7 +81,7 @@
     if ((y - ballRadius) <= 0) {
       dy = -dy;
     }
-    else if ((y + ballRadius + paddleHeight) >= canvas.height) {
+    else if ((y + ballRadius) >= canvas.height) {
       if (x > paddleX && x < paddleX + paddleWidth) {
         success.play();
         dy = -dy;
