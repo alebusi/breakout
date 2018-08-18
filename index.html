@@ -36,7 +36,8 @@
   var brickOffsetTop = 30;
   var brickOffsetLeft = 30;
   var success = new Audio('paddle.mp3');
-  var successbricks = new Audio('collision.mp3');
+  var successbricks = new Audio('collision2.mp3');
+  var fail = new Audio('fail.wav');
   // score to be displayed
   var score = 0;
   var bricks = [];
@@ -89,8 +90,9 @@
       else {
         //x -= 1;
         //drawBall();
+        fail.play();
         alert("Game Over");
-        //document.location.reload();
+        document.location.reload();
       }
     }
   }
