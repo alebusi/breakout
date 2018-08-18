@@ -35,6 +35,7 @@
   var brickPadding = 10;
   var brickOffsetTop = 30;
   var brickOffsetLeft = 30;
+  var success = new Audio('paddle.mp3');
   // score to be displayed
   var score = 0;
   var bricks = [];
@@ -81,7 +82,6 @@
     }
     else if ((y + ballRadius) >= canvas.height) {
       if (x > paddleX && x < paddleX + paddleWidth) {
-        var success = new Audio('paddle.mp3');
         success.play();
         dy = -dy;
       }
@@ -158,7 +158,7 @@
     x += dx;
     y += dy;
   }
-  setInterval(draw, 1);
+  setInterval(draw, 8);
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
 </script>
