@@ -91,6 +91,7 @@
         //drawBall();
         var fail = new Audio('fail.wav');
         fail.play();
+        clearInterval(rCode);
         alert("Game Over");
         document.location.reload();
       }
@@ -162,7 +163,7 @@
     x += dx;
     y += dy;
   }
-  var rc = setInterval(draw, 4);
+  var rCode = setInterval(draw, 4);
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
 </script>
