@@ -36,6 +36,7 @@
   var brickOffsetTop = 30;
   var brickOffsetLeft = 30;
   var success = new Audio('paddle.mp3');
+  var successbricks = new Audio('collision.mp3');
   // score to be displayed
   var score = 0;
   var bricks = [];
@@ -99,7 +100,6 @@
               if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
                   dy = -dy;
                   b.status -= 1;
-                  var successbricks = new Audio('collision.mp3');
                   successbricks.play();
                   if (b.status == 0)
                     score++;
