@@ -81,14 +81,14 @@
     if ((y - ballRadius) <= 0) {
       dy = -dy;
     }
-    else if ((y + ballRadius + paddleHeight+5 ) >= canvas.height) {
+    else if ((y + ballRadius + paddleHeight-10 ) >= canvas.height) {
       if (x > paddleX && x < paddleX + paddleWidth) {
         success.play();
         dy = -dy;
       }
       else {
-        x -= 1;
-        drawBall();
+        //x -= 1;
+        //drawBall();
         alert("Game Over");
         document.location.reload();
       }
