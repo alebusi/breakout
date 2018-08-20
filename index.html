@@ -17,8 +17,8 @@
   var ctx = canvas.getContext("2d");
   var x = canvas.width/2;
   var y = canvas.height-66;
-  var dx = 2;
-  var dy = -2;
+  var dx = 1;
+  var dy = -1;
   var ballRadius = 15;
   // player paddle
   var paddleHeight = 50;
@@ -29,10 +29,10 @@
   var leftPressed = false;
   // infos about bricks
   var brickRowCount = 4;
-  var brickColumnCount = 10;
+  var brickColumnCount = 11;
   var brickWidth = 75;
   var brickHeight = 20;
-  var brickPadding = 16;
+  var brickPadding = 10;
   var brickOffsetTop = 30;
   var brickOffsetLeft = 30;
   var success = new Audio('paddle.mp3');
@@ -126,10 +126,10 @@
     ctx.fill();
     ctx.closePath();
     if(rightPressed && paddleX < canvas.width-paddleWidth) {
-      paddleX += 6;
+      paddleX += 4;
     }
     else if(leftPressed && paddleX > 0) {
-      paddleX -= 6;
+      paddleX -= 4;
     }
   }
   function drawBricks() {
@@ -165,7 +165,7 @@
     x += dx;
     y += dy;
   }
-  var rCode = setInterval(draw, 8);
+  var rCode = setInterval(draw, 6);
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
 </script>
