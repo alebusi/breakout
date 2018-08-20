@@ -126,10 +126,10 @@
     ctx.fill();
     ctx.closePath();
     if(rightPressed && paddleX < canvas.width-paddleWidth) {
-      paddleX += 4;
+      paddleX += 6;
     }
     else if(leftPressed && paddleX > 0) {
-      paddleX -= 4;
+      paddleX -= 6;
     }
   }
   function drawBricks() {
