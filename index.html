@@ -38,6 +38,7 @@
   var success = new Audio('paddle.mp3');
   var successbricks = new Audio('collision2.mp3');
   var fail = new Audio('fail.wav');
+  var win = new Audio('applause.mp3');
   // score to be displayed
   var score = 0;
   var bricks = [];
@@ -108,7 +109,6 @@
                   if (b.status == 0)
                     score++;
                   if (score == brickRowCount * brickColumnCount) {
-                    var win = new Audio('applause.mp3');
                     win.play();
                     alert("YOU WIN!");
                     document.location.reload();
