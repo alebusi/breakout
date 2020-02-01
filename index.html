@@ -28,10 +28,10 @@
   var rightPressed = false;
   var leftPressed = false;
   // infos about bricks
-  var brickRowCount = 4;
-  var brickColumnCount = 11;
-  var brickWidth = 75;
-  var brickHeight = 20;
+  var brickRowCount = 2;
+  var brickColumnCount = 7;
+  var brickWidth = 90;
+  var brickHeight = 40;
   var brickPadding = 10;
   var brickOffsetTop = 30;
   var brickOffsetLeft = 30;
@@ -67,7 +67,7 @@
   function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#E10000";
+    ctx.fillStyle = "#FF3300";
     ctx.fill();
     ctx.closePath();
   }
@@ -121,7 +121,7 @@
   function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = "#FFFFFF";
     ctx.fill();
     ctx.closePath();
     if(rightPressed && paddleX < canvas.width-paddleWidth) {
@@ -143,9 +143,9 @@
             ctx.beginPath();
             ctx.rect(brickX, brickY, brickWidth, brickHeight);
             if (bricks[c][r].status == 1) {
-              ctx.fillStyle = "#0080FF";
+              ctx.fillStyle = "orange";
             } else {
-              ctx.fillStyle = "#000000";
+              ctx.fillStyle = "#FF00FF";
             }
             ctx.fill();
             ctx.closePath();
