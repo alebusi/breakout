@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
     <style>
-    	* { padding: 0; margin: 0; background-color: #000000; }
-    	canvas { background: #000000; display: block; margin: 100px auto; border: 1px solid white}
+    	* { padding: 0; margin: 0; background-color: #FFBF18; }
+    	canvas { background: #FFFFFF; display: block; margin: 100px auto; }
     </style>
 </head>
 <body>
@@ -19,7 +19,7 @@
   var y = canvas.height-66;
   var dx = 1;
   var dy = -1;
-  var ballRadius = 20;
+  var ballRadius = 15;
   // player paddle
   var paddleHeight = 50;
   var paddleWidth = 180;
@@ -28,10 +28,10 @@
   var rightPressed = false;
   var leftPressed = false;
   // infos about bricks
-  var brickRowCount = 2;
-  var brickColumnCount = 7;
-  var brickWidth = 90;
-  var brickHeight = 40;
+  var brickRowCount = 4;
+  var brickColumnCount = 11;
+  var brickWidth = 75;
+  var brickHeight = 20;
   var brickPadding = 10;
   var brickOffsetTop = 30;
   var brickOffsetLeft = 30;
@@ -67,7 +67,7 @@
   function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#FF3300";
+    ctx.fillStyle = "#E10000";
     ctx.fill();
     ctx.closePath();
   }
@@ -121,7 +121,7 @@
   function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#FFFFFF";
+    ctx.fillStyle = "#000000";
     ctx.fill();
     ctx.closePath();
     if(rightPressed && paddleX < canvas.width-paddleWidth) {
@@ -143,9 +143,9 @@
             ctx.beginPath();
             ctx.rect(brickX, brickY, brickWidth, brickHeight);
             if (bricks[c][r].status == 1) {
-              ctx.fillStyle = "FF00FF";
+              ctx.fillStyle = "#0080FF";
             } else {
-              ctx.fillStyle = "orange";
+              ctx.fillStyle = "#000000";
             }
             ctx.fill();
             ctx.closePath();
