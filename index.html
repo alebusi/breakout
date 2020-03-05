@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
     <style>
-    	* { padding: 0; margin: 0; background-color: #FFBF18; }
-    	canvas { background: #FFFFFF; display: block; margin: 100px auto; }
+    	* { padding: 0; margin: 0; background-color: #000000; }
+    	canvas { background: #000000; display: block; margin: 100px auto; }
     </style>
 </head>
 <body>
@@ -67,7 +67,7 @@
   function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#E10000";
+    ctx.fillStyle = "#FF3300";
     ctx.fill();
     ctx.closePath();
   }
@@ -121,7 +121,7 @@
   function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = "#FFFFFF";
     ctx.fill();
     ctx.closePath();
     if(rightPressed && paddleX < canvas.width-paddleWidth) {
@@ -145,7 +145,7 @@
             if (bricks[c][r].status == 1) {
               ctx.fillStyle = "#0080FF";
             } else {
-              ctx.fillStyle = "#000000";
+              ctx.fillStyle = "#FFFFFF";
             }
             ctx.fill();
             ctx.closePath();
