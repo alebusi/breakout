@@ -4,14 +4,13 @@
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
     <style>
-	html, body {
-         overflow: hidden;
-         -webkit-user-select: none; /* Safari */
-         -ms-user-select: none; /* IE 10+ and Edge */
-         user-select: none; /* Standard syntax */
-        }
     	* { padding: 0; margin: 0; background-color: #000000; }
-    	canvas { background: #000000; border: solid 5px white; display: block; margin: 100px auto; }
+    	canvas { background: #000000; border: solid 5px white; display: block; margin: 100px auto; 
+	         overflow: hidden;
+                 -webkit-user-select: none; /* Safari */
+                 -ms-user-select: none; /* IE 10+ and Edge */
+                 user-select: none; /* Standard syntax */
+	         }
     </style>
 </head>
 <body>
@@ -60,11 +59,12 @@
   }
   function movePaddle(evt) {
       if (evt.type == 'touchstart') {
-		 var dir = evt.touches[0].clientX < window.vw / 2 ? 'L' : 'R'
-         if (dir == "R") {
+         var dir = evt.touches[0].clientX < window.vw / 2 ? -1 : 1
+	 alert("dir : "+dir);
+         if (dir == 1) {
            rightPressed = true;
            }
-         else if (dir == "L") {
+         else if (dir == -1) {
           leftPressed = true;
          }
       }
