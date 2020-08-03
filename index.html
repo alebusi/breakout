@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
     <style>
-    	* { padding: 0; margin: 0; background-color: #000000; }
-    	canvas { background: #000000; border: solid 5px white; display: block; margin: 100px auto; 
-	         overflow: hidden;
-                 -webkit-user-select: none; /* Safari */
-                 -ms-user-select: none; /* IE 10+ and Edge */
-                 user-select: none; /* Standard syntax */
-	         }
+    	* { padding: 0; margin: 0; background-color: #000000; 
+	    overflow: hidden;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10+ and Edge */
+            user-select: none; /* Standard syntax */
+	    }
+    	canvas { background: #000000; border: solid 5px white; display: block; margin: 100px auto;}
     </style>
 </head>
 <body>
@@ -62,14 +62,16 @@
       if (evt.type == 'touchstart') {
 	 if (perso) {
 	     document.location.reload();
-	 }	 
-         var dir = evt.touches[0].clientX < window.innerWidth / 2 ? -1 : 1
-         if (dir == 1) {
-           rightPressed = true;
+	 }
+	 else {
+           var dir = evt.touches[0].clientX < window.innerWidth / 2 ? -1 : 1
+           if (dir == 1) {
+             rightPressed = true;
            }
-         else if (dir == -1) {
-          leftPressed = true;
-         }
+           else if (dir == -1) {
+            leftPressed = true;
+           }
+	 }
       }
       else if (evt.type == 'touchend') {
               rightPressed = false;
