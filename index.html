@@ -63,17 +63,20 @@
         bricks[c][r] = { x: 0, y: 0, status: 2 };
     }
   }
-  function muoviPaddle(direction) {
-      if(direction == "R") {
-          rightPressed = true;
-      }
-      else if(direction == "L") {
+  function movePaddle(direction) {
+      if (evt.type == 'touchstart') {
+		 var dir = evt.touches[0].clientX < window.vw / 2 ? 'L' : 'R'
+         if (dir == "R") {
+           rightPressed = true;
+           }
+         else if (dir == "L") {
           leftPressed = true;
+         }
       }
-  }
-  function stopPaddle() {    
-      rightPressed = false;
-      leftPressed = false;
+      else if (evt.type == 'touchend') {
+              rightPressed = false;
+              leftPressed = false;
+      }
   }
   function keyDownHandler(e) {
       if(e.keyCode == 39) {
@@ -194,6 +197,8 @@
   var rCode = setInterval(draw, 5);
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
+  body.addEventListener('touchstart', ev => this.movePaddle(ev));
+  body.addEventListener('touchend', ev => this.movePaddle(ev));
 </script>
 
 </body>
