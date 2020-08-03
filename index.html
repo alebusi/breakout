@@ -4,21 +4,14 @@
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
     <style>
+	html, body {
+         overflow: hidden;
+         -webkit-user-select: none; /* Safari */
+         -ms-user-select: none; /* IE 10+ and Edge */
+         user-select: none; /* Standard syntax */
+        }
     	* { padding: 0; margin: 0; background-color: #000000; }
     	canvas { background: #000000; border: solid 5px white; display: block; margin: 100px auto; }
-        .sinistra {
-          position: fixed;
-          width: 50vw;
-          height: 99vh;
-          touch-action: none;
-        }
-        .destra {
-          position: fixed;
-          width: 50vw;
-          height: 99vh;
-          left: 50vw;
-          touch-action: none;
-        }
     </style>
 </head>
 <body>
@@ -65,7 +58,7 @@
 	// Questa funzione genera un numero intero random contenuto fra min e max inclusi
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  function movePaddle(direction) {
+  function movePaddle(evt) {
       if (evt.type == 'touchstart') {
 		 var dir = evt.touches[0].clientX < window.vw / 2 ? 'L' : 'R'
          if (dir == "R") {
@@ -124,7 +117,7 @@
         //drawBall();
         fail.play();
         clearInterval(rCode);
-        alert("Game Over");
+        //alert("Game Over");
         //document.location.reload();
       }
     }
