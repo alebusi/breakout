@@ -11,6 +11,8 @@
 <body>
 
 <canvas id="myCanvas" width="960" height="700"></canvas>
+<div class="sinistra" ontouchstart="muoviPaddle('L')" ontouchend="stopPaddle()"></div>
+<div class="destra" ontouchstart="muoviPaddle('R')" ontouchend="stopPaddle()"></div>
 
 <script>
   var canvas = document.getElementById("myCanvas");
@@ -47,6 +49,18 @@
     for(r=0; r<brickRowCount; r++) {
         bricks[c][r] = { x: 0, y: 0, status: 2 };
     }
+  }
+  function muoviPaddle(direction) {
+      if(direction == "R") {
+          rightPressed = true;
+      }
+      else if(direction == "L") {
+          leftPressed = true;
+      }
+  }
+  function stopPaddle() {    
+      rightPressed = false;
+      leftPressed = false;
   }
   function keyDownHandler(e) {
       if(e.keyCode == 39) {
