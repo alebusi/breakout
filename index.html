@@ -59,8 +59,7 @@
   }
   function movePaddle(evt) {
       if (evt.type == 'touchstart') {
-         var dir = evt.touches[0].clientX < window.vw / 2 ? -1 : 1
-	 alert("dir : "+dir);
+         var dir = evt.touches[0].clientX < window.innerWidth / 2 ? -1 : 1
          if (dir == 1) {
            rightPressed = true;
            }
