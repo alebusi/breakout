@@ -24,8 +24,6 @@
 <body>
 
 <canvas id="myCanvas" width="960" height="700"></canvas>
-<div class="sinistra" ontouchstart="muoviPaddle('L')" ontouchend="stopPaddle()"></div>
-<div class="destra" ontouchstart="muoviPaddle('R')" ontouchend="stopPaddle()"></div>
 
 <script>
   var canvas = document.getElementById("myCanvas");
@@ -201,8 +199,8 @@
   var rCode = setInterval(draw, 5);
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
-  body.addEventListener('touchstart', ev => this.movePaddle(ev));
-  body.addEventListener('touchend', ev => this.movePaddle(ev));
+  document.addEventListener('touchstart', movePaddle(ev));
+  document.addEventListener('touchend', movePaddle(ev));
 </script>
 
 </body>
