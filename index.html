@@ -47,6 +47,7 @@
   // score to be displayed
   var score = 0;
   var bricks = [];
+  var perso = false;
   for(c=0; c<brickColumnCount; c++) {
     bricks[c] = [];
     for(r=0; r<brickRowCount; r++) {
@@ -59,6 +60,9 @@
   }
   function movePaddle(evt) {
       if (evt.type == 'touchstart') {
+	 if (perso) {
+	     document.location.reload();
+	 }	 
          var dir = evt.touches[0].clientX < window.innerWidth / 2 ? -1 : 1
          if (dir == 1) {
            rightPressed = true;
@@ -116,6 +120,7 @@
         //drawBall();
         fail.play();
         clearInterval(rCode);
+	perso=true;
         //alert("Game Over");
         //document.location.reload();
       }
