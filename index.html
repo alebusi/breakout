@@ -10,7 +10,7 @@
             -ms-user-select: none; /* IE 10+ and Edge */
             user-select: none; /* Standard syntax */
 	    }
-    	canvas { background: #000000; border: solid 5px white; display: block; margin: 100px auto;}
+    	canvas { background: #000000; border: solid 5px white; border-bottom-color:black; display: block; margin: 100px auto;}
     </style>
 </head>
 <body>
@@ -123,6 +123,7 @@
         fail.play();
         clearInterval(rCode);
 	perso=true;
+	document.getElementById("myCanvas").style.borderColor = "#FF3300";
         //alert("Game Over");
         //document.location.reload();
       }
