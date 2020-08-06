@@ -20,8 +20,8 @@
 <script>
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
-  var x = getRandomInt(10,900);//canvas.width/2;
-  var y = canvas.height-66;
+  var x = Math.round(getRandomInt(10,900)/10)*10; //assegna numero casuale multiplo di 10
+  var y = canvas.height-70;
   var dx = 5;
   var dy = -5;
   var ballRadius = 25;
