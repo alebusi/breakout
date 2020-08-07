@@ -196,7 +196,7 @@
     x += dx;
     y += dy;
   }
-  var rCode = setInterval(draw, 30);
+  var rCode = setInterval(draw, 1000);
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
   document.addEventListener('touchstart', ev => this.movePaddle(ev));
